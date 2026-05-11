@@ -6,10 +6,10 @@ import logoImg from "@/assets/logo.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "lqkm.p — Liquidy 10ml za 30 zł" },
-      { name: "description", content: "Premium liquidy 10ml w cenie 30 zł. Zamów przez Instagram @lqkm.p — DM i odbierasz." },
-      { property: "og:title", content: "lqkm.p — Liquidy 10ml za 30 zł" },
-      { property: "og:description", content: "Premium liquidy 10ml w cenie 30 zł. Zamów przez Instagram @lqkm.p" },
+      { title: "lqkm.p — Liquidy 10ml za 25 zł" },
+      { name: "description", content: "Premium liquidy 10ml w cenie 25 zł. Zamów przez Instagram @lqkm.p — DM i odbierasz." },
+      { property: "og:title", content: "lqkm.p — Liquidy 10ml za 25 zł" },
+      { property: "og:description", content: "Premium liquidy 10ml w cenie 25 zł. Zamów przez Instagram @lqkm.p" },
     ],
   }),
   component: Index,
@@ -96,7 +96,7 @@ function Index() {
                 className="h-full w-full object-cover"
               />
               <div className="absolute left-4 top-4 rotate-[-4deg] bg-blood px-3 py-1 font-grunge text-lg uppercase tracking-wider text-white shadow-blood">
-                10ml · 30zł
+                10ml · 25zł
               </div>
             </div>
           </div>
@@ -108,7 +108,7 @@ function Index() {
         <div className="mx-auto grid max-w-7xl gap-px bg-white/5 sm:grid-cols-3">
           {[
             { k: "10 ml", v: "Pojemność" },
-            { k: "30 zł", v: "Stała cena" },
+            { k: "25 zł", v: "Stała cena" },
             { k: "DM", v: "Tylko Instagram" },
           ].map((it) => (
             <div key={it.k} className="bg-background px-6 py-8 text-center">
@@ -128,7 +128,7 @@ function Index() {
           {[
             { n: "01", t: "Pisz na DM", d: "Wpadaj na @lqkm.p i daj znać co bierzesz." },
             { n: "02", t: "Ustalamy", d: "Smak, ilość i sposób odbioru — szybko." },
-            { n: "03", t: "Odbierasz", d: "Płacisz 30 zł za 10ml i lecisz." },
+            { n: "03", t: "Odbierasz", d: "Płacisz 25 zł za 10ml i lecisz." },
           ].map((s) => (
             <div key={s.n} className="group relative overflow-hidden rounded-xl border border-white/10 bg-card p-6 transition hover:border-blood">
               <div className="font-grunge text-7xl text-white/10 transition group-hover:text-blood/40">{s.n}</div>
