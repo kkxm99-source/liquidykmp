@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Instagram, Flame, Droplet, ArrowRight, MessageCircle } from "lucide-react";
+import { Instagram, Flame, ArrowRight, MessageCircle } from "lucide-react";
 import heroImg from "@/assets/hero-liquid.jpg";
+import logoImg from "@/assets/logo.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -21,9 +22,9 @@ function Index() {
     <main className="relative min-h-screen overflow-hidden">
       {/* Header */}
       <header className="relative z-20 mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
-        <a href="/" className="flex items-center gap-2 text-xl font-bold">
-          <span className="grid h-10 w-10 place-items-center rounded-md bg-blood shadow-blood">
-            <Droplet className="h-5 w-5 text-white" />
+        <a href="/" className="flex items-center gap-3 text-xl font-bold">
+          <span className="grid h-11 w-11 place-items-center overflow-hidden rounded-md border border-blood/50 bg-white shadow-blood">
+            <img src={logoImg} alt="lqkm.p logo" className="h-full w-full object-cover" />
           </span>
           <span className="font-grunge text-2xl tracking-wider">lqkm.p</span>
         </a>
