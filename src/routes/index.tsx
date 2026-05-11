@@ -1,11 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Instagram, Sparkles, Zap, Droplet, ShieldCheck, ArrowRight } from "lucide-react";
+import { Instagram, Flame, Droplet, ArrowRight, MessageCircle } from "lucide-react";
+import heroImg from "@/assets/hero-liquid.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       { title: "lqkm.p — Liquidy 10ml za 30 zł" },
-      { name: "description", content: "Premium liquidy 10ml w cenie 30 zł. Zamów przez Instagram @lqkm.p — szybko, prosto, vibe." },
+      { name: "description", content: "Premium liquidy 10ml w cenie 30 zł. Zamów przez Instagram @lqkm.p — DM i odbierasz." },
       { property: "og:title", content: "lqkm.p — Liquidy 10ml za 30 zł" },
       { property: "og:description", content: "Premium liquidy 10ml w cenie 30 zł. Zamów przez Instagram @lqkm.p" },
     ],
@@ -18,26 +19,19 @@ const IG_URL = "https://www.instagram.com/lqkm.p/";
 function Index() {
   return (
     <main className="relative min-h-screen overflow-hidden">
-      {/* Animated blobs */}
-      <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="animate-blob absolute -top-32 -left-32 h-96 w-96 rounded-full bg-accent/40 blur-3xl" />
-        <div className="animate-blob absolute top-1/3 -right-32 h-[28rem] w-[28rem] rounded-full bg-primary/30 blur-3xl" style={{ animationDelay: "-6s" }} />
-        <div className="animate-blob absolute -bottom-32 left-1/3 h-96 w-96 rounded-full bg-neon-3/30 blur-3xl" style={{ animationDelay: "-12s" }} />
-      </div>
-
-      {/* Nav */}
-      <header className="relative z-10 mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
-        <a href="/" className="flex items-center gap-2 text-lg font-bold">
-          <span className="grid h-9 w-9 place-items-center rounded-xl bg-gradient-vibe shadow-glow">
-            <Droplet className="h-5 w-5 text-background" />
+      {/* Header */}
+      <header className="relative z-20 mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
+        <a href="/" className="flex items-center gap-2 text-xl font-bold">
+          <span className="grid h-10 w-10 place-items-center rounded-md bg-blood shadow-blood">
+            <Droplet className="h-5 w-5 text-white" />
           </span>
-          <span className="text-gradient">lqkm.p</span>
+          <span className="font-grunge text-2xl tracking-wider">lqkm.p</span>
         </a>
         <a
           href={IG_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="glass inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-medium transition hover:scale-105"
+          className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium backdrop-blur transition hover:border-blood hover:bg-blood/10"
         >
           <Instagram className="h-4 w-4" />
           @lqkm.p
@@ -45,101 +39,133 @@ function Index() {
       </header>
 
       {/* Hero */}
-      <section className="relative z-10 mx-auto max-w-6xl px-6 pt-12 pb-24 text-center md:pt-20">
-        <div className="glass mx-auto mb-6 inline-flex items-center gap-2 rounded-full px-4 py-1.5 text-xs font-medium text-muted-foreground">
-          <Sparkles className="h-3.5 w-3.5 text-neon" />
-          świeża dostawa · vibe only
-        </div>
-        <h1 className="mx-auto max-w-3xl text-5xl font-extrabold leading-[1.05] md:text-7xl">
-          Liquidy <span className="text-gradient">10ml</span><br />
-          za <span className="text-gradient">30 zł</span>.
-        </h1>
-        <p className="mx-auto mt-6 max-w-xl text-lg text-muted-foreground">
-          Smaki które uderzają. Bez lania wody, bez gadania. Pisz na DM i odbierasz vibe.
-        </p>
+      <section className="relative z-10 mx-auto grid max-w-7xl items-center gap-10 px-6 pb-24 pt-6 md:grid-cols-2 md:gap-6 md:pt-10">
+        <div className="order-2 md:order-1">
+          <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-blood/40 bg-blood/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-blood">
+            <Flame className="h-3.5 w-3.5" />
+            świeża dostawa
+          </div>
+          <h1 className="font-grunge text-6xl leading-[0.9] sm:text-7xl md:text-8xl">
+            <span className="block">Premium</span>
+            <span className="block text-blood animate-flicker">liquidy</span>
+            <span className="block">10ml.</span>
+          </h1>
+          <p className="mt-6 max-w-md text-lg text-muted-foreground">
+            Smaki które dowożą. Bez gadania, bez kombinowania. Pisz na DM i odbierasz.
+          </p>
 
-        <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          <a
-            href={IG_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 rounded-full bg-gradient-vibe px-7 py-3.5 font-semibold text-background shadow-glow transition hover:scale-105"
-          >
-            <Instagram className="h-5 w-5" />
-            Zamów na Instagramie
-            <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
-          </a>
-          <a href="#produkt" className="glass rounded-full px-7 py-3.5 font-semibold transition hover:scale-105">
-            Zobacz ofertę
-          </a>
-        </div>
-
-        {/* Floating bottle */}
-        <div id="produkt" className="relative mx-auto mt-20 w-full max-w-md">
-          <div className="animate-pulse-glow absolute inset-0 rounded-[2.5rem] bg-gradient-vibe opacity-30 blur-2xl" />
-          <div className="glass animate-float relative rounded-[2.5rem] p-10">
-            <div className="mx-auto flex h-56 w-32 flex-col items-center">
-              <div className="h-6 w-10 rounded-t-md bg-foreground/80" />
-              <div className="h-3 w-16 rounded-sm bg-foreground/60" />
-              <div className="relative mt-1 h-44 w-28 overflow-hidden rounded-2xl bg-gradient-vibe shadow-glow">
-                <div className="absolute inset-x-3 top-6 rounded-md bg-background/80 p-2 text-center">
-                  <div className="text-[10px] font-bold tracking-widest text-foreground">LQKM.P</div>
-                  <div className="text-[9px] text-muted-foreground">10ml · 20mg</div>
-                </div>
-                <div className="absolute -right-6 top-1/3 h-20 w-20 rounded-full bg-white/30 blur-2xl" />
+          <div className="mt-8 flex items-end gap-6">
+            <div>
+              <div className="text-xs uppercase tracking-widest text-muted-foreground">cena</div>
+              <div className="font-grunge text-7xl leading-none text-white">
+                30<span className="text-blood">zł</span>
               </div>
+              <div className="mt-1 text-sm text-muted-foreground">za butelkę 10ml</div>
             </div>
-            <div className="mt-8 text-center">
-              <div className="text-sm uppercase tracking-widest text-muted-foreground">cena za sztukę</div>
-              <div className="mt-1 text-6xl font-extrabold text-gradient">30 zł</div>
-              <div className="mt-1 text-sm text-muted-foreground">10ml · różne smaki</div>
+          </div>
+
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+            <a
+              href={IG_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center justify-center gap-2 rounded-md bg-blood px-7 py-4 font-bold uppercase tracking-wider text-white shadow-blood transition hover:scale-[1.02] hover:bg-blood/90"
+            >
+              <Instagram className="h-5 w-5" />
+              Zamów na DM
+              <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+            </a>
+            <a
+              href="#info"
+              className="inline-flex items-center justify-center gap-2 rounded-md border-2 border-white/20 px-7 py-4 font-bold uppercase tracking-wider transition hover:border-blood"
+            >
+              Info
+            </a>
+          </div>
+        </div>
+
+        {/* Hero image */}
+        <div className="order-1 md:order-2">
+          <div className="relative">
+            <div className="absolute -inset-4 rounded-2xl bg-blood/30 blur-3xl" />
+            <div className="relative overflow-hidden rounded-2xl border border-white/10 shadow-blood">
+              <img
+                src={heroImg}
+                alt="Liquid 10ml lqkm.p — premium e-liquid"
+                className="h-full w-full object-cover"
+              />
+              <div className="absolute left-4 top-4 rotate-[-4deg] bg-blood px-3 py-1 font-grunge text-lg uppercase tracking-wider text-white shadow-blood">
+                10ml · 30zł
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features */}
-      <section className="relative z-10 mx-auto grid max-w-6xl gap-4 px-6 pb-24 sm:grid-cols-3">
-        {[
-          { icon: Zap, title: "Szybko", desc: "DM → ustalamy → odbierasz. Bez kombinowania." },
-          { icon: ShieldCheck, title: "Sprawdzone", desc: "Tylko smaki które naprawdę dowożą." },
-          { icon: Droplet, title: "10ml za 30 zł", desc: "Stała cena. Bez ukrytych kosztów." },
-        ].map(({ icon: Icon, title, desc }) => (
-          <div key={title} className="glass rounded-3xl p-6 transition hover:-translate-y-1 hover:shadow-glow">
-            <div className="mb-4 grid h-11 w-11 place-items-center rounded-xl bg-gradient-vibe">
-              <Icon className="h-5 w-5 text-background" />
+      {/* Info strip */}
+      <section id="info" className="relative z-10 border-y border-white/10 bg-black/40">
+        <div className="mx-auto grid max-w-7xl gap-px bg-white/5 sm:grid-cols-3">
+          {[
+            { k: "10 ml", v: "Pojemność" },
+            { k: "30 zł", v: "Stała cena" },
+            { k: "DM", v: "Tylko Instagram" },
+          ].map((it) => (
+            <div key={it.k} className="bg-background px-6 py-8 text-center">
+              <div className="font-grunge text-5xl text-blood">{it.k}</div>
+              <div className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">{it.v}</div>
             </div>
-            <h3 className="text-lg font-bold">{title}</h3>
-            <p className="mt-1 text-sm text-muted-foreground">{desc}</p>
-          </div>
-        ))}
+          ))}
+        </div>
+      </section>
+
+      {/* How */}
+      <section className="relative z-10 mx-auto max-w-7xl px-6 py-20">
+        <h2 className="font-grunge text-5xl md:text-6xl">
+          Jak <span className="text-blood">zamówić</span>?
+        </h2>
+        <div className="mt-10 grid gap-6 md:grid-cols-3">
+          {[
+            { n: "01", t: "Pisz na DM", d: "Wpadaj na @lqkm.p i daj znać co bierzesz." },
+            { n: "02", t: "Ustalamy", d: "Smak, ilość i sposób odbioru — szybko." },
+            { n: "03", t: "Odbierasz", d: "Płacisz 30 zł za 10ml i lecisz." },
+          ].map((s) => (
+            <div key={s.n} className="group relative overflow-hidden rounded-xl border border-white/10 bg-card p-6 transition hover:border-blood">
+              <div className="font-grunge text-7xl text-white/10 transition group-hover:text-blood/40">{s.n}</div>
+              <div className="mt-2 font-grunge text-2xl uppercase tracking-wider">{s.t}</div>
+              <p className="mt-2 text-sm text-muted-foreground">{s.d}</p>
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* CTA */}
-      <section className="relative z-10 mx-auto max-w-4xl px-6 pb-24">
-        <div className="glass relative overflow-hidden rounded-[2rem] p-10 text-center md:p-16">
-          <div className="absolute inset-0 -z-10 bg-gradient-vibe opacity-20" />
-          <h2 className="text-3xl font-extrabold md:text-5xl">
-            Gotowy na <span className="text-gradient">vibe</span>?
-          </h2>
-          <p className="mx-auto mt-3 max-w-md text-muted-foreground">
-            Cały kontakt i zamówienia przez Instagram. Wpadaj na DM.
-          </p>
-          <a
-            href={IG_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-vibe px-8 py-4 font-semibold text-background shadow-glow transition hover:scale-105"
-          >
-            <Instagram className="h-5 w-5" />
-            @lqkm.p
-            <ArrowRight className="h-4 w-4" />
-          </a>
+      <section className="relative z-10 mx-auto max-w-7xl px-6 pb-24">
+        <div className="relative overflow-hidden rounded-2xl border border-blood/40 bg-gradient-to-br from-blood/30 via-background to-background p-10 md:p-16">
+          <div className="absolute -right-20 -top-20 h-60 w-60 rounded-full bg-blood/40 blur-3xl" />
+          <div className="relative flex flex-col items-start gap-6 md:flex-row md:items-end md:justify-between">
+            <div>
+              <h2 className="font-grunge text-5xl leading-none md:text-7xl">
+                Lecimy z <span className="text-blood">DM</span>?
+              </h2>
+              <p className="mt-3 max-w-md text-muted-foreground">
+                Cały kontakt i zamówienia tylko przez Instagram. Wpadaj.
+              </p>
+            </div>
+            <a
+              href={IG_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-md bg-blood px-8 py-4 font-bold uppercase tracking-widest text-white shadow-blood transition hover:scale-105"
+            >
+              <MessageCircle className="h-5 w-5" />
+              @lqkm.p
+            </a>
+          </div>
         </div>
       </section>
 
-      <footer className="relative z-10 mx-auto max-w-6xl px-6 pb-10 text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} lqkm.p · produkt dla osób pełnoletnich (18+)
+      <footer className="relative z-10 border-t border-white/10 px-6 py-8 text-center text-xs uppercase tracking-widest text-muted-foreground">
+        © {new Date().getFullYear()} lqkm.p · 18+
       </footer>
     </main>
   );
