@@ -87,6 +87,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:description", content: pageDescription },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2ab077cf-b4a3-4291-973f-7681f96b950c/id-preview-0dc80df2--b0119463-b327-4bd7-90e6-98f44dc6d93c.lovable.app-1778512723010.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2ab077cf-b4a3-4291-973f-7681f96b950c/id-preview-0dc80df2--b0119463-b327-4bd7-90e6-98f44dc6d93c.lovable.app-1778512723010.png" },
+      { name: "description", content: "✅ Dobre liquidy w super cenie – tylko 30 zł! Smaczne, mocne i w 10 ml – idealne na co dzień! Gwarantowana jakość i pełny smak." },
+      { property: "og:description", content: "✅ Dobre liquidy w super cenie – tylko 30 zł! Smaczne, mocne i w 10 ml – idealne na co dzień! Gwarantowana jakość i pełny smak." },
+      { name: "twitter:description", content: "✅ Dobre liquidy w super cenie – tylko 30 zł! Smaczne, mocne i w 10 ml – idealne na co dzień! Gwarantowana jakość i pełny smak." },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
