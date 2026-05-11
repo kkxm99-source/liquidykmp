@@ -73,21 +73,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "LQKMP" },
-      { name: "description", content: "✅ Dobre liquidy w super cenie – tylko 30 zł!
-Smaczne, mocne i w 10 ml – idealne na co dzień!
-Gwarantowana jakość i pełny smak." },
+      { name: "description", content: "✅ Dobre liquidy w super cenie – tylko 30 zł! Smaczne, mocne i w 10 ml – idealne na co dzień! Gwarantowana jakość i pełny smak." },
       { name: "author", content: "Lovable" },
       { property: "og:title", content: "LQKMP" },
-      { property: "og:description", content: "✅ Dobre liquidy w super cenie – tylko 30 zł!
-Smaczne, mocne i w 10 ml – idealne na co dzień!
-Gwarantowana jakość i pełny smak." },
+      { property: "og:description", content: "✅ Dobre liquidy w super cenie – tylko 30 zł! Smaczne, mocne i w 10 ml – idealne na co dzień! Gwarantowana jakość i pełny smak." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
       { name: "twitter:title", content: "LQKMP" },
-      { name: "twitter:description", content: "✅ Dobre liquidy w super cenie – tylko 30 zł!
-Smaczne, mocne i w 10 ml – idealne na co dzień!
-Gwarantowana jakość i pełny smak." },
+      { name: "twitter:description", content: "✅ Dobre liquidy w super cenie – tylko 30 zł! Smaczne, mocne i w 10 ml – idealne na co dzień! Gwarantowana jakość i pełny smak." },
       { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2ab077cf-b4a3-4291-973f-7681f96b950c/id-preview-0dc80df2--b0119463-b327-4bd7-90e6-98f44dc6d93c.lovable.app-1778512723010.png" },
       { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2ab077cf-b4a3-4291-973f-7681f96b950c/id-preview-0dc80df2--b0119463-b327-4bd7-90e6-98f44dc6d93c.lovable.app-1778512723010.png" },
     ],
