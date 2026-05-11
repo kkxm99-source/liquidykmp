@@ -59,7 +59,7 @@ function Index() {
             <div>
               <div className="text-xs uppercase tracking-widest text-muted-foreground">cena</div>
               <div className="font-grunge text-7xl leading-none text-white">
-                30<span className="text-blood">zł</span>
+                25<span className="text-blood">zł</span>
               </div>
               <div className="mt-1 text-sm text-muted-foreground">za butelkę 10ml</div>
             </div>
